@@ -5,14 +5,6 @@ import java.util.Scanner;
 
 public class MovieTicket extends Ticket {
 
-    private String status;
-    private int id;
-    private String customerName;
-    private LocalDateTime show;
-    private int seats;
-    private String paymentMode;
-    private double amount;
-
     @Override
     public boolean bookTicket(Event movie) {
         Movie movieObj = (Movie) movie;
@@ -37,7 +29,7 @@ public class MovieTicket extends Ticket {
         System.out.println("Enter your preferred Show choice: ");
         choice = Integer.parseInt(sc.nextLine())-1;
         if(choice >= 0 && choice <= movieObj.getShowTiming().length) {
-            show = movieObj.getShowTiming()[choice];
+            dateTime = movieObj.getShowTiming()[choice];
         }
         else {
             System.out.println("This is not a valid show timing.");
@@ -76,7 +68,7 @@ public class MovieTicket extends Ticket {
         System.out.println("Here is your ticket: \n");
         System.out.println("----------------------------");
         System.out.println("Name: " + customerName);
-        System.out.println("Show: " + show);
+        System.out.println("Show: " + dateTime);
         System.out.println("Seats: " + seats);
         System.out.println("Amount Paid: " + amount);
         System.out.println("----------------------------");
@@ -84,6 +76,6 @@ public class MovieTicket extends Ticket {
 
     @Override
     public String toString() {
-        return String.format("%-10s\t %-30s\t %-30s\t %-20s\t %-20s", id, customerName, show, seats, amount);
+        return String.format("%-10s\t %-30s\t %-30s\t %-20s\t %-20s", id, customerName, dateTime, seats, amount);
     }
 }

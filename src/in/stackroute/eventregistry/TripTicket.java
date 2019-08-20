@@ -1,17 +1,8 @@
 package in.stackroute.eventregistry;
 
-import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class TripTicket extends Ticket {
-
-    private String status;
-    private int id;
-    private String customerName;
-    private LocalDateTime tripDateTime;
-    private int seats;
-    private String paymentMode;
-    private double amount;
 
     @Override
     public boolean bookTicket(Event trip) {
@@ -30,7 +21,7 @@ public class TripTicket extends Ticket {
         System.out.println("Your Name:");
         customerName = sc.nextLine();
 
-        tripDateTime = tripObj.getDateTime();
+        dateTime = tripObj.getDateTime();
 
         System.out.println("How many peoples are there: ");
         seats = Integer.parseInt(sc.nextLine());
@@ -64,7 +55,7 @@ public class TripTicket extends Ticket {
         System.out.println("Here is your ticket: \n");
         System.out.println("----------------------------");
         System.out.println("Name: " + customerName);
-        System.out.println("Date: " + tripDateTime);
+        System.out.println("Date: " + dateTime);
         System.out.println("Seats: " + seats);
         System.out.println("Amount Paid: " + amount);
         System.out.println("----------------------------");
@@ -72,7 +63,7 @@ public class TripTicket extends Ticket {
 
     @Override
     public String toString() {
-        return String.format("%-10s\t %-30s\t %-30s\t %-20s\t %-20s", id, customerName, tripDateTime, seats, amount);
+        return String.format("%-10s\t %-30s\t %-30s\t %-20s\t %-20s", id, customerName, dateTime, seats, amount);
     }
 
 }
