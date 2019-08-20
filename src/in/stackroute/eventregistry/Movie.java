@@ -5,8 +5,16 @@ import java.util.ArrayList;
 
 public class Movie extends Event{
 
+	/*
+	 * This class have all properties and behaviors for Particular Movie.
+	 */
+
 	private LocalDateTime[] showTiming;
 	private ArrayList<MovieTicket> bookings;
+
+	public Movie() {
+
+	}
 
 	public Movie(String name, String description, LocalDateTime[] showTiming, double price, String city, int maxSeats) {
 		super(name, description, city, price, "Movie", maxSeats);
@@ -37,10 +45,10 @@ public class Movie extends Event{
 		}
 		else {
 			System.out.printf("%-10s\t %-30s\t %-30s\t %-20s\t %-20s\n", "Id", "Name", "Show", "Seats", "Amount");
-			for (Ticket ticket : bookings) {
-				MovieTicket movieBooking = (MovieTicket) ticket;
+			bookings.stream().forEach(ticket -> {
+				MovieTicket movieBooking = ticket;
 				System.out.println(movieBooking);
-			}
+			});
 		}
 	}
 }

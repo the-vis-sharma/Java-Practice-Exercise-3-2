@@ -5,10 +5,17 @@ import java.util.ArrayList;
 
 public class Trip extends Event{
 
+    /*
+     * this class will handle all the operation for Trips.
+     */
+
     private int noOfdays;
     private LocalDateTime dateTime;
     private ArrayList<TripTicket> bookings;
 
+    public Trip() {
+
+    }
 
     public Trip(String name, String description, double price, String city, LocalDateTime dateTime, int noOfdays, int maxSeats) {
         super(name, description, city, price, "Trip", maxSeats);
@@ -48,10 +55,11 @@ public class Trip extends Event{
         }
         else {
             System.out.printf("%-10s\t %-30s\t %-30s\t %-20s\t %-20s\n", "Id", "Name", "Show", "Seats", "Amount");
-            for (Ticket ticket : bookings) {
-                TripTicket tripBooking = (TripTicket) ticket;
+
+            bookings.stream().forEach(ticket -> {
+                TripTicket tripBooking = ticket;
                 System.out.println(tripBooking);
-            }
+            });
         }
     }
 }

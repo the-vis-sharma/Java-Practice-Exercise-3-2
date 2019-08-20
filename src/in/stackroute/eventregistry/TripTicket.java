@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class TripTicket extends Ticket {
 
+    /*
+     * Ticket for Trip. It will handle booking and printing ticket operations.
+     */
+
     @Override
     public boolean bookTicket(Event trip) {
         Trip tripObj = (Trip) trip;

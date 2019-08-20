@@ -2,6 +2,10 @@ package in.stackroute.eventregistry;
 
 public abstract class Event implements IEvent {
 
+	/*
+	 * This class will  have all the common properties and behaviors for events
+	 */
+
 	private int eventId;
 	private String name;
 	private String description;
@@ -9,6 +13,10 @@ public abstract class Event implements IEvent {
 	private double price;
 	private String type;
 	private int maxSeats;
+
+	public Event() {
+
+	}
 
 	public Event(String name, String description, String city, double price, String type, int maxSeats) {
 		this.eventId = new EventStore().listAllEvent().size() + 1;

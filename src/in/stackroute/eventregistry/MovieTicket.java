@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class MovieTicket extends Ticket {
 
+    /*
+     * Ticket for Movie. It will handle booking and printing ticket operations.
+     */
+
     @Override
     public boolean bookTicket(Event movie) {
         Movie movieObj = (Movie) movie;

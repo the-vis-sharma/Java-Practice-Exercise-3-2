@@ -4,6 +4,10 @@ import java.time.LocalDateTime;
 
 public abstract class Ticket implements ITicket {
 
+	/*
+	 * Parent class for all kinds of events tickets.
+	 */
+
 	String[] availablePaymentModes = {"Cash",
 			"Card",
 			"Wallet",

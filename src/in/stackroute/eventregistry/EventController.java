@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 public class EventController {
 
+    /*
+     * This class will have control over all the flows to interact with the user.
+     */
+
+
     public static void showMainMenu(EventStore registry) {
 
         Scanner sc = new Scanner(System.in);
@@ -63,6 +68,7 @@ public class EventController {
         }
     }
 
+    //show booking menu for indivisual events
     public static void showBookingMenu(EventStore registry, Event event) {
         Scanner sc = new Scanner(System.in);
 
@@ -102,6 +108,7 @@ public class EventController {
         }
     }
 
+    //this will return the object of event selected by the user from the given list
     public static Event getSelectedEvent(ArrayList<Event> events) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Event Id to select: ");
@@ -117,6 +124,7 @@ public class EventController {
         return getSelectedEvent(events);
     }
 
+    //this will load booking interface based on the event type
     public static void book(Event event) {
         if(event.getType().equalsIgnoreCase("Movie")) {
             MovieTicket bookingHandler = new MovieTicket();
@@ -137,6 +145,7 @@ public class EventController {
         }
     }
 
+    //this will load all the bookings or tickets based on the event type
     public static void showAllBookings(Event event) {
         if(event.getType().equalsIgnoreCase("Movie")) {
             Movie movie = (Movie) event;
